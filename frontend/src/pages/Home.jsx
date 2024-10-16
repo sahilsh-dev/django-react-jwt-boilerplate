@@ -25,7 +25,7 @@ function Home() {
 
 	const deleteNote = async (id) => {
 		await api
-			.delete(`/api/notes/${id}/`)
+			.delete(`/api/notes/delete/${id}/`)
 			.then(() => getNotes())
 			.catch((err) => console.log(err));
 	};
