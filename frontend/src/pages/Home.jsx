@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Note from "../components/Note";
 import api from "../api";
 
 function Home() {
@@ -40,6 +41,9 @@ function Home() {
 		<div>
 			<div>
 				<h2>Notes</h2>
+				{notes.map((note) => (
+					<Note key={note.id} note={note} deleteNote={deleteNote} />
+				))}
 			</div>
 			<h2>Create a Note</h2>
 			<form onSubmit={addNote}>
